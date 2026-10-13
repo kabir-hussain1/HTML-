@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f7f6f2">
+	<meta name="description" content="Discover considered timepieces from independent watchmakers and established maisons at Meridian Watch Co.">
+	<title>Meridian Watch Co. | Time, Considered</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--paper: #f7f6f2;
+			--white: #fff;
+			--ink: #20231f;
+			--muted: #72756e;
+			--line: #e5e4de;
+			--green: #29433a;
+			--green-dark: #1d332b;
+			--lime: #d6e36a;
+			--coral: #c46148;
+			--serif: "Playfair Display", Georgia, serif;
+			--sans: "DM Sans", "Segoe UI", sans-serif;
+		}
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+		button, input, select { font: inherit; }
+		button { color: inherit; }
+		a { color: inherit; text-decoration: none; }
+		.announcement { min-height: 34px; display: flex; justify-content: center; align-items: center; padding: 6px 16px; background: var(--green); color: #fff; font-size: 11px; letter-spacing: .06em; text-align: center; }
+		.announcement strong { color: var(--lime); font-weight: 600; }
+		.site-header { position: sticky; top: 0; z-index: 10; background: rgba(247,246,242,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+		.header-main { max-width: 1320px; height: 76px; margin: auto; padding: 0 36px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+		.brand { display: inline-flex; align-items: center; gap: 10px; width: fit-content; }
+		.brand-mark { width: 31px; height: 31px; display: grid; place-items: center; border: 1px solid var(--green); border-radius: 50%; color: var(--green); font-family: var(--serif); font-size: 19px; line-height: 1; }
+		.brand-name { font-family: var(--serif); font-size: 17px; letter-spacing: .01em; }
+		.main-nav { display: flex; gap: 34px; align-items: center; font-size: 12px; color: #444740; }
+		.main-nav a { padding: 29px 0; transition: color .2s; }
+		.main-nav a:hover { color: var(--coral); }
+		.header-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; }
+		.icon-button { position: relative; width: 39px; height: 39px; border: 0; border-radius: 50%; background: transparent; display: inline-grid; place-items: center; cursor: pointer; transition: background .2s; }
+		.icon-button:hover { background: #ecebe5; }
+		.icon-button svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+		.count-badge { position: absolute; top: 0; right: 0; min-width: 16px; height: 16px; padding: 0 4px; display: grid; place-items: center; border: 1px solid var(--paper); border-radius: 9px; background: var(--coral); color: white; font-size: 9px; }
+		.mobile-menu { display: none; }
+		.hero { max-width: 1320px; min-height: 510px; margin: 0 auto; padding: 32px 36px 42px; }
+		.hero-panel { min-height: 436px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; background: #eaece4; }
+		.hero-copy { padding: clamp(38px, 7vw, 92px) 5vw; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+		.eyebrow { display: flex; align-items: center; gap: 10px; color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+		.eyebrow::before { content: ""; width: 23px; height: 1px; background: var(--coral); }
+		h1, h2, h3, p { margin-top: 0; }
+		.hero h1 { max-width: 500px; margin: 20px 0 15px; font-family: var(--serif); font-size: clamp(42px, 5vw, 66px); font-weight: 500; line-height: 1.08; letter-spacing: 0; }
+		.hero h1 em { color: var(--green); font-weight: 500; }
+		.hero-copy > p { max-width: 390px; margin-bottom: 27px; color: #5c615a; font-size: 13px; line-height: 1.8; }
+		.primary-button { min-height: 45px; padding: 0 20px; display: inline-flex; justify-content: center; align-items: center; gap: 13px; border: 0; background: var(--green); color: white; font-size: 11px; font-weight: 600; cursor: pointer; transition: background .2s, transform .2s; }
+		.primary-button:hover { background: var(--green-dark); transform: translateY(-1px); }
+		.primary-button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+		.hero-image { position: relative; min-height: 436px; background: #d5d9cf; }
+		.hero-image img { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center 54%; }
+		.hero-note { position: absolute; right: 18px; bottom: 18px; padding: 10px 13px; background: rgba(255,255,255,.91); font-size: 10px; letter-spacing: .04em; }
+		.benefits { max-width: 1320px; margin: auto; padding: 18px 36px 25px; display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+		.benefit { min-height: 40px; display: flex; justify-content: center; align-items: center; gap: 10px; border-right: 1px solid var(--line); color: #454942; font-size: 10px; }
+		.benefit:last-child { border: 0; }
+		.benefit svg { width: 17px; height: 17px; flex: 0 0 auto; fill: none; stroke: var(--green); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+		.shop-section { max-width: 1320px; margin: auto; padding: 72px 36px 82px; scroll-margin-top: 84px; }
+		.section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 30px; }
+		.section-heading .eyebrow { margin-bottom: 12px; }
+		.section-heading h2 { margin: 0; font-family: var(--serif); font-size: clamp(30px, 4vw, 43px); font-weight: 500; line-height: 1.15; }
+		.section-heading p { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
+		.view-all { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 5px; border: 0; border-bottom: 1px solid var(--ink); background: none; font-size: 11px; cursor: pointer; white-space: nowrap; }
+		.view-all svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+		.shop-tools { min-height: 50px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+		.filters { display: flex; align-items: center; gap: 5px; overflow-x: auto; scrollbar-width: none; }
+		.filters::-webkit-scrollbar { display: none; }
+		.filter-button { flex: 0 0 auto; padding: 8px 12px; border: 0; border-radius: 2px; background: transparent; color: #676a64; font-size: 10px; cursor: pointer; }
+		.filter-button:hover, .filter-button.active { background: var(--green); color: white; }
+		.tool-right { display: flex; align-items: center; gap: 14px; }
+		.search-wrap { position: relative; display: flex; align-items: center; }
+		.search-wrap svg { position: absolute; left: 0; width: 15px; height: 15px; fill: none; stroke: #777a73; stroke-width: 1.5; pointer-events: none; }
+		.search-input { width: 125px; padding: 8px 3px 8px 23px; border: 0; border-bottom: 1px solid transparent; outline: 0; background: transparent; font-size: 10px; }
+		.search-input:focus { border-bottom-color: var(--green); }
+		.sort-select { max-width: 130px; padding: 8px 2px; border: 0; background: transparent; color: #555951; font-size: 10px; outline-color: var(--green); cursor: pointer; }
+		.product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px 18px; }
+		.product-card { min-width: 0; animation: enter .45s both; }
+		@keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+		.product-image { position: relative; aspect-ratio: 1 / 1.08; overflow: hidden; background: #ecebe5; }
+		.product-image > img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .5s; }
+		.product-card:hover .product-image > img { transform: scale(1.035); }
+		.product-tag { position: absolute; top: 11px; left: 11px; padding: 6px 8px; background: rgba(255,255,255,.9); font-size: 9px; letter-spacing: .04em; }
+		.wish-button { position: absolute; top: 9px; right: 9px; width: 33px; height: 33px; border: 0; border-radius: 50%; background: rgba(255,255,255,.9); display: grid; place-items: center; cursor: pointer; }
+		.wish-button svg { width: 17px; height: 17px; fill: none; stroke: var(--ink); stroke-width: 1.5; }
+		.wish-button[aria-pressed="true"] svg { fill: var(--coral); stroke: var(--coral); }
+		.product-info { padding-top: 13px; }
+		.product-brand { margin-bottom: 5px; color: var(--muted); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+		.product-name { min-height: 20px; margin: 0 0 8px; font-family: var(--serif); font-size: 16px; font-weight: 500; }
+		.product-bottom { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+		.product-price { font-size: 12px; font-weight: 600; }
+		.add-button { padding: 7px 10px; border: 1px solid #d9dad3; background: transparent; font-size: 9px; cursor: pointer; transition: .2s; }
+		.add-button:hover { border-color: var(--green); background: var(--green); color: white; }
+		.empty-results { grid-column: 1/-1; padding: 65px 10px; color: var(--muted); text-align: center; font-family: var(--serif); font-size: 22px; }
+		.editorial { max-width: 1320px; margin: 0 auto 82px; padding: 0 36px; }
+		.editorial-panel { min-height: 300px; display: grid; grid-template-columns: 1fr 1fr; background: #e9e8e1; }
+		.editorial-image { min-height: 300px; overflow: hidden; }
+		.editorial-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+		.editorial-copy { padding: 42px clamp(25px, 5vw, 70px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+		.editorial-copy .eyebrow { margin-bottom: 16px; }
+		.editorial-copy h2 { max-width: 400px; margin: 0 0 13px; font-family: var(--serif); font-size: clamp(27px, 3vw, 39px); font-weight: 500; line-height: 1.2; }
+		.editorial-copy p { max-width: 370px; margin-bottom: 22px; color: #5c615a; font-size: 12px; line-height: 1.8; }
+		.newsletter { padding: 48px 24px; background: var(--green); color: white; text-align: center; }
+		.newsletter .eyebrow { justify-content: center; color: var(--lime); }
+		.newsletter h2 { margin: 13px 0 8px; font-family: var(--serif); font-size: clamp(26px, 3vw, 35px); font-weight: 500; }
+		.newsletter p { margin-bottom: 21px; color: #d5ddd8; font-size: 11px; }
+		.newsletter-form { max-width: 405px; margin: auto; display: flex; border-bottom: 1px solid rgba(255,255,255,.55); }
+		.newsletter-form input { min-width: 0; flex: 1; padding: 11px 3px; border: 0; outline: 0; background: transparent; color: white; font-size: 11px; }
+		.newsletter-form input::placeholder { color: #c5cec8; }
+		.newsletter-form button { padding: 0 5px 0 14px; border: 0; background: transparent; color: var(--lime); font-size: 10px; font-weight: 600; cursor: pointer; }
+		.footer { max-width: 1320px; margin: auto; padding: 28px 36px; display: flex; justify-content: space-between; align-items: center; gap: 20px; color: var(--muted); font-size: 9px; }
+		.footer-links { display: flex; gap: 20px; }
+		.footer-links a:hover { color: var(--ink); }
+		.overlay { position: fixed; inset: 0; z-index: 20; background: rgba(20,24,21,.42); opacity: 0; visibility: hidden; transition: .25s; }
+		.overlay.open { opacity: 1; visibility: visible; }
+		.cart-drawer { position: fixed; z-index: 21; top: 0; right: 0; width: min(430px, 100%); height: 100dvh; padding: 25px; display: flex; flex-direction: column; background: var(--paper); transform: translateX(102%); transition: transform .3s ease; }
+		.cart-drawer.open { transform: translateX(0); }
+		.drawer-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 19px; border-bottom: 1px solid var(--line); }
+		.drawer-header h2 { margin: 0; font-family: var(--serif); font-size: 25px; font-weight: 500; }
+		.close-button { width: 35px; height: 35px; border: 0; border-radius: 50%; background: transparent; font-size: 23px; font-weight: 300; cursor: pointer; }
+		.cart-items { flex: 1; overflow: auto; }
+		.cart-empty { padding: 44px 0; color: var(--muted); text-align: center; font-family: var(--serif); font-size: 18px; }
+		.cart-line { padding: 16px 0; display: grid; grid-template-columns: 74px 1fr auto; gap: 13px; border-bottom: 1px solid var(--line); }
+		.cart-line img { width: 74px; height: 82px; object-fit: cover; background: #eae9e3; }
+		.cart-line h3 { margin: 3px 0 5px; font-family: var(--serif); font-size: 14px; font-weight: 500; }
+		.cart-line p { margin: 0 0 10px; color: var(--muted); font-size: 10px; }
+		.quantity-controls { display: inline-flex; align-items: center; border: 1px solid var(--line); }
+		.quantity-controls button { width: 25px; height: 25px; border: 0; background: transparent; cursor: pointer; }
+		.quantity-controls span { min-width: 18px; text-align: center; font-size: 10px; }
+		.cart-line-price { padding-top: 3px; font-size: 11px; font-weight: 600; }
+		.cart-summary { padding-top: 18px; border-top: 1px solid var(--line); }
+		.summary-row { margin-bottom: 13px; display: flex; justify-content: space-between; font-size: 12px; }
+		.summary-note { margin: 0 0 14px; color: var(--muted); font-size: 9px; }
+		.checkout-button { width: 100%; min-height: 46px; border: 0; background: var(--green); color: white; font-size: 11px; font-weight: 600; cursor: pointer; }
+		.checkout-button:hover { background: var(--green-dark); }
+		.toast { position: fixed; z-index: 30; left: 50%; bottom: 24px; padding: 12px 18px; background: var(--ink); color: white; font-size: 11px; opacity: 0; transform: translate(-50%, 12px); pointer-events: none; transition: .25s; }
+		.toast.show { opacity: 1; transform: translate(-50%, 0); }
+		.modal { position: fixed; z-index: 24; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(20,24,21,.5); opacity: 0; visibility: hidden; transition: .2s; }
+		.modal.open { opacity: 1; visibility: visible; }
+		.modal-panel { width: min(480px, 100%); max-height: 90dvh; overflow: auto; padding: 28px; background: var(--paper); }
+		.checkout-form h2, .success-state h2 { margin: 0 0 7px; font-family: var(--serif); font-size: 27px; font-weight: 500; }
+		.checkout-form > p, .success-state p { margin: 0 0 20px; color: var(--muted); font-size: 11px; line-height: 1.7; }
+		.form-row { margin-bottom: 13px; }
+		.form-row label { display: block; margin-bottom: 6px; color: #555951; font-size: 10px; }
+		.form-row input { width: 100%; height: 40px; padding: 0 10px; border: 1px solid var(--line); background: #fff; outline-color: var(--green); font-size: 11px; }
+		.checkout-actions { margin-top: 19px; display: flex; gap: 10px; }
+		.checkout-actions button { flex: 1; min-height: 42px; border: 0; cursor: pointer; font-size: 10px; }
+		.cancel-button { background: #e9e8e2; }
+		.pay-button { background: var(--green); color: white; }
+		.success-state { display: none; padding: 8px 0; text-align: center; }
+		.success-mark { width: 48px; height: 48px; margin: 0 auto 15px; display: grid; place-items: center; border-radius: 50%; background: #e2e9d6; color: var(--green); font-size: 24px; }
+		.success-state .checkout-button { margin-top: 5px; }
+		@media (min-width: 1450px) { .hero, .benefits, .shop-section, .editorial, .footer, .header-main { max-width: 1400px; } }
+		@media (max-width: 800px) {
+			.header-main { height: 66px; padding: 0 22px; grid-template-columns: 1fr auto; }
+			.main-nav { position: absolute; top: 66px; left: 0; right: 0; padding: 0 22px; display: none; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+			.main-nav.open { display: flex; }
+			.main-nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+			.mobile-menu { display: inline-grid; }
+			.hero { padding: 22px 22px 30px; }
+			.hero-panel { min-height: 0; grid-template-columns: 1fr 1fr; }
+			.hero-copy { padding: 34px 25px; }
+			.hero h1 { font-size: clamp(36px, 6vw, 51px); }
+			.hero-image { min-height: 350px; }
+			.benefits { padding: 12px 22px 18px; grid-template-columns: repeat(2, 1fr); row-gap: 12px; }
+			.benefit:nth-child(2) { border: 0; }
+			.shop-section { padding: 56px 22px 62px; }
+			.product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 14px; }
+			.editorial { margin-bottom: 60px; padding: 0 22px; }
+			.editorial-panel { grid-template-columns: 1fr 1fr; }
+			.editorial-image { min-height: 260px; }
+			.footer { padding: 24px 22px; }
+		}
+		@media (max-width: 520px) {
+			.announcement { font-size: 9px; }
+			.brand-name { font-size: 15px; }
+			.header-main { padding: 0 14px; }
+			.header-actions { gap: 1px; }
+			.icon-button { width: 35px; height: 35px; }
+			.hero { padding: 14px 14px 24px; }
+			.hero-panel { grid-template-columns: 1fr; }
+			.hero-copy { padding: 36px 25px 31px; }
+			.hero h1 { max-width: 350px; font-size: 44px; }
+			.hero-copy > p { max-width: 320px; font-size: 12px; }
+			.hero-image { min-height: 270px; }
+			.hero-image img { object-position: center 48%; }
+			.benefits { padding: 10px 14px 15px; }
+			.benefit { justify-content: flex-start; padding-left: 6px; font-size: 9px; }
+			.shop-section { padding: 47px 14px 50px; }
+			.section-heading { align-items: flex-start; margin-bottom: 21px; }
+			.section-heading h2 { font-size: 31px; }
+			.section-heading > div > p { font-size: 10px; }
+			.view-all { margin-top: 25px; font-size: 9px; }
+			.shop-tools { align-items: flex-start; flex-direction: column; gap: 8px; padding: 8px 0; }
+			.filters { width: 100%; }
+			.filter-button { padding: 7px 10px; }
+			.tool-right { width: 100%; justify-content: space-between; }
+			.search-input { width: 150px; }
+			.product-grid { gap: 22px 10px; }
+			.product-image { aspect-ratio: 1 / 1.13; }
+			.product-tag { top: 7px; left: 7px; padding: 5px 6px; font-size: 8px; }
+			.wish-button { top: 6px; right: 6px; width: 29px; height: 29px; }
+			.product-info { padding-top: 10px; }
+			.product-name { font-size: 14px; }
+			.product-price { font-size: 11px; }
+			.add-button { padding: 7px 8px; font-size: 8px; }
+			.editorial { margin-bottom: 48px; padding: 0 14px; }
+			.editorial-panel { grid-template-columns: 1fr; }
+			.editorial-image { min-height: 230px; max-height: 270px; }
+			.editorial-copy { padding: 29px 25px 34px; }
+			.newsletter { padding: 41px 18px; }
+			.footer { align-items: flex-start; flex-direction: column; gap: 13px; padding: 22px 14px; }
+			.footer-links { gap: 15px; }
+			.cart-drawer { padding: 20px; }
+		}
+		@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+	</style>
+</head>
+<body>
+	<div class="announcement"><strong>Complimentary worldwide shipping</strong>&nbsp; on all orders over &euro;250</div>
+	<header class="site-header">
+		<div class="header-main">
+			<a class="brand" href="#top" aria-label="Meridian Watch Co. home"><span class="brand-mark">M</span><span class="brand-name">Meridian Watch Co.</span></a>
+			<nav class="main-nav" id="mainNav" aria-label="Main navigation">
+				<a href="#shop" data-nav-filter="All">Shop all</a>
+				<a href="#shop" data-nav-filter="Automatic">Automatic</a>
+				<a href="#shop" data-nav-filter="Dress">Dress watches</a>
+				<a href="#story">Our story</a>
+			</nav>
+			<div class="header-actions">
+				<button class="icon-button mobile-menu" id="menuButton" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+				<button class="icon-button" id="searchButton" aria-label="Search watches"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button>
+				<button class="icon-button" id="wishlistButton" aria-label="Show saved watches"><svg viewBox="0 0 24 24"><path d="M20.5 8.8c0 5.2-8.5 10.2-8.5 10.2S3.5 14 3.5 8.8A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 8.5 1.5Z"/></svg><span class="count-badge" id="wishCount">0</span></button>
+				<button class="icon-button" id="cartButton" aria-label="Open shopping bag"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="count-badge" id="cartCount">0</span></button>
+			</div>
+		</div>
+	</header>
+	<main id="top">
+		<section class="hero" aria-labelledby="heroTitle">
+			<div class="hero-panel">
+				<div class="hero-copy">
+					<span class="eyebrow">The art of keeping time</span>
+					<h1 id="heroTitle">A little more <em>meaning</em> in every minute.</h1>
+					<p>Thoughtful watches, made to be worn for a lifetime. Meet the pieces you will want to pass down.</p>
+					<a class="primary-button" href="#shop">Find your watch <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+				</div>
+				<div class="hero-image"><img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1400&q=85" alt="Classic stainless steel wristwatch with a dark dial"><span class="hero-note">Made for all the time ahead.</span></div>
+			</div>
+		</section>
+		<section class="benefits" aria-label="Shopping benefits">
+			<div class="benefit"><svg viewBox="0 0 24 24"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="17.5" cy="19" r="1.5"/></svg>Complimentary delivery over &euro;250</div>
+			<div class="benefit"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.9 8 7 10 4.1-2 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>2-year international warranty</div>
+			<div class="benefit"><svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM8 7V5a4 4 0 0 1 8 0v2"/><path d="M9 12h6"/></svg>Easy 30-day returns</div>
+			<div class="benefit"><svg viewBox="0 0 24 24"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/></svg>Chosen with care, always</div>
+		</section>
+		<section class="shop-section" id="shop" aria-labelledby="shopTitle">
+			<div class="section-heading">
+				<div><span class="eyebrow">The collection</span><h2 id="shopTitle">Time, well spent.</h2><p>Good design. Honest mechanics. Nothing you don't need.</p></div>
+				<button class="view-all" id="viewAllButton">View all watches <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg></button>
+			</div>
+			<div class="shop-tools">
+				<div class="filters" role="group" aria-label="Filter watches by style">
+					<button class="filter-button active" data-filter="All">All watches</button>
+					<button class="filter-button" data-filter="Automatic">Automatic</button>
+					<button class="filter-button" data-filter="Dress">Dress</button>
+					<button class="filter-button" data-filter="Sport">Sport</button>
+					<button class="filter-button" data-filter="Under 500">Under &euro;500</button>
+				</div>
+				<div class="tool-right">
+					<label class="search-wrap"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><input class="search-input" id="searchInput" type="search" placeholder="Find a timepiece" aria-label="Search watches"></label>
+					<select class="sort-select" id="sortSelect" aria-label="Sort watches"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option></select>
+				</div>
+			</div>
+			<div class="product-grid" id="productGrid" aria-live="polite"></div>
+		</section>
+		<section class="editorial" id="story" aria-labelledby="storyTitle">
+			<div class="editorial-panel">
+				<div class="editorial-image"><img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1200&q=80" alt="A watchmaker's hands carefully assembling a mechanical timepiece" loading="lazy"></div>
+				<div class="editorial-copy"><span class="eyebrow">A considered choice</span><h2 id="storyTitle">Better things take time.</h2><p>We look for the details that matter: reliable movements, considered materials and makers who stand behind their work. Then we make choosing one feel simple.</p><a class="view-all" href="#shop">Meet the collection <svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a></div>
+			</div>
+		</section>
+		<section class="newsletter" aria-labelledby="newsletterTitle">
+			<span class="eyebrow">A note from Meridian</span><h2 id="newsletterTitle">Good things, occasionally.</h2><p>New arrivals, thoughtful stories and 10% off your first order.</p>
+			<form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Your email address" aria-label="Your email address" required><button type="submit">Sign me up &rarr;</button></form>
+		</section>
+	</main>
+	<footer class="footer"><span>&copy; 2026 Meridian Watch Co. &nbsp; Made for the long run.</span><div class="footer-links"><a href="#story">Our story</a><a href="#shop">Shipping &amp; returns</a><a href="mailto:hello@meridianwatch.co">Contact</a></div></footer>
+
+	<div class="overlay" id="overlay"></div>
+	<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-modal="true" role="dialog">
+		<div class="drawer-header"><h2>Your bag <span id="drawerCount">(0)</span></h2><button class="close-button" id="closeCart" aria-label="Close shopping bag">&times;</button></div>
+		<div class="cart-items" id="cartItems"></div>
+		<div class="cart-summary"><div class="summary-row"><span>Subtotal</span><strong id="cartSubtotal">&euro;0.00</strong></div><p class="summary-note">Shipping and taxes calculated at checkout.</p><button class="checkout-button" id="checkoutButton">Continue to checkout</button></div>
+	</aside>
+	<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+		<div class="modal-panel">
+			<form class="checkout-form" id="checkoutForm">
+				<h2 id="checkoutTitle">Your details</h2><p>Almost yours. Enter your details to review your order.</p>
+				<div class="form-row"><label for="customerName">Full name</label><input id="customerName" name="name" autocomplete="name" required></div>
+				<div class="form-row"><label for="customerEmail">Email address</label><input id="customerEmail" name="email" type="email" autocomplete="email" required></div>
+				<div class="form-row"><label for="customerAddress">Delivery address</label><input id="customerAddress" name="address" autocomplete="street-address" required></div>
+				<div class="checkout-actions"><button class="cancel-button" type="button" id="cancelCheckout">Back to bag</button><button class="pay-button" type="submit">Place test order</button></div>
+			</form>
+			<div class="success-state" id="successState"><div class="success-mark">&#10003;</div><h2>Order received.</h2><p id="successMessage">Thank you. Your order details are ready.</p><button class="checkout-button" id="continueShopping">Continue shopping</button></div>
+		</div>
+	</div>
+	<div class="toast" id="toast" role="status" aria-live="polite"></div>
+	<script src="Untitled-1.js"></script>
+</body>
+</html>
