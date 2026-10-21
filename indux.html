@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+        
+        
+            <div class="login">
+         <h1 class="wel">Welecome back </h1>
+         <P class="We">login to back</P>
+
+         <form>
+            <fieldset>
+                <legend class="We">login</legend>
+                <label for="EMAIL" class="em">EMAIL</label>
+                <input type="email" id="EMAIL" placeholder=" EMAIL" value="email" name="email" required>
+                <label for="pass" class="pass">PASSWORD</label>
+                <input type="password" id="pass" placeholder="your password" value="pass" name="pass" required>
+                <button type="submit">login</button>
+            </fieldset>
+         </form>
+            </div>
+        <style>
+             *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background:black;
+    background-image: url(../asset/j6inn3uzekqg1.jpg);
+    background-size: cover;
+    
+    
+}
+.login{
+    width: 380px;
+    padding:35px ;
+    background:transparent;
+    border-radius: 12px;
+}
+.login h1{
+    text-align: center;
+    margin-bottom: 8px;
+}
+.login p{
+    text-align: center;
+    margin-bottom: 25px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}   
+label{
+    margin-bottom: 6px;
+}
+
+input{
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc ;
+    border-radius: 6px;
+     font-size: 16px;
+}
+button{
+    padding: 12px;
+    border:none ;
+    border-radius:6px ;
+    font-size:16px ;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.login fieldset{
+    padding: 20px;
+    margin-bottom:20px;
+}
+.em{
+    color:gold;
+}
+input:focus {
+   outline: none;
+   border:2px solid blue;
+}
+button:hover {
+background-color:red;
+color:yellow;
+transform: scale(1.2);
+}
+input,button{
+    transition: 0.3s;
+}
+@media (max-width:600px) {
+    .login {
+        width: 90%;
+    }
+}
+.box{
+    width: 150px;
+    height: 100px;
+    position: relative;
+    top: 30px;
+    left: 40px;
+    background: skyblue;
+}
+.wel{
+    color: whitesmoke;
+}
+.We{
+    color:white;
+}
+.pass{
+    color: gold;
+}
+        </style>
+</body>
+</html>
